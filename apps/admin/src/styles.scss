@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/primeng.min.css";
+@import "primeng/resources/themes/lara-light-indigo/theme.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: var(--surface-ground);
+}
