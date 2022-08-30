@@ -13,7 +13,7 @@ import {
 } from '@angular/common/http';
 import { take } from 'rxjs';
 import { QuerySearchParamsService } from './core/services/query-search-params.service';
-import { EmptyService } from 'libs/shared-services/src';
+import { ContactFormService } from './core/services/contact-form.service';
 
 @Component({
     selector: 'app-root',
@@ -27,19 +27,19 @@ export class AppComponent implements OnInit {
         currency: '',
     });
 
+    public form = new FormGroup(this.contactFormModel);
+
     constructor(
         private fb: FormBuilder,
         private changeDetectorRef: ChangeDetectorRef,
         private http: HttpClient,
         private querySearchParamsService: QuerySearchParamsService,
-        private empty: EmptyService,
+        private contactFormModel: ContactFormService,
     ) {}
 
     public ngOnInit() {
         this.searchForm.valueChanges
             .subscribe((value) => { this.onFormChanged(value) });
-
-        console.log(this.empty.getHello());
     }
 
     public onBtnClicked() {
